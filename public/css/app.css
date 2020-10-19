@@ -21,17 +21,17 @@
 }
 
 .header__ul {
-  height: 50px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 50px;
   list-style: none;
 }
 
 .header__ul li {
-  line-height: 50px;
-  padding: 0 10px;
   margin: 0 10px;
+  padding: 0 10px;
+  line-height: 50px;
 }
 
 .header__ul li.active {
@@ -39,7 +39,39 @@
 }
 
 .header__link {
-  color: #000;
   text-decoration: none;
+  color: #000;
+}
+
+.main {
+  background-color: #0085be;
+}
+
+.pasta {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.pasta__main-title {
+  padding: 10px 5px;
+  text-transform: uppercase;
+  color: #002d73;
+}
+
+.pasta__list {
+  display: flex;
+  flex-flow: wrap;
+  width: 100%;
+}
+
+.pasta__card {
+  width: 33%;
+  padding: 3px 5px;
+  list-style: none;
+}
+
+.pasta__img {
+  width: 100%;
 }
 
