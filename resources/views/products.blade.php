@@ -63,6 +63,14 @@
           @foreach ($pasta_corta as $pasta)
             <li class="pasta__card">
               <img class="pasta__img" src="{{$pasta["src"]}}" alt="Foto Pasta - {{$pasta["titolo"]}}">
+
+              <!-- overlay -->
+              <div class="overlay">
+                <h4 class="overlay__title">{{$pasta["titolo"]}}</h4>
+                <img class="overlay__img" src="{{asset("images/icon.svg")}}" alt="icon">
+              </div>
+              <!-- /overlay -->
+
             </li>
           @endforeach
         </ul>
@@ -80,6 +88,14 @@
           @foreach ($pasta_cortissima as $pasta)
             <li class="pasta__card">
               <img class="pasta__img" src="{{$pasta["src"]}}" alt="Foto Pasta - {{$pasta["titolo"]}}">
+
+              <!-- overlay -->
+              <div class="overlay">
+                <h4 class="overlay__title">{{$pasta["titolo"]}}</h4>
+                <img class="overlay__img" src="{{asset("images/icon.svg")}}" alt="icon">
+              </div>
+              <!-- /overlay -->
+
             </li>
           @endforeach
         </ul>
