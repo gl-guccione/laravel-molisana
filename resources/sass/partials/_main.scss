@@ -22,12 +22,59 @@
     width: 100%;
   }
   &__card {
-    width: 33%;
-    padding: 3px 5px;
+    position: relative;
+
+    overflow: hidden;
+
+    width: calc(calc(100% / 3) - 10px);
+    margin: 3px 5px;
 
     list-style: none;
+    &:hover .overlay {
+      opacity: 1;
+    }
+    &:hover .pasta__img {
+      transform: scale(1.25);
+    }
   }
   &__img {
+    display: block;
+
     width: 100%;
+    transition: transform 500ms;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  transition: opacity 500ms;
+  text-align: center;
+
+  opacity: 0;
+  background-color: $bgBlueOpacity;
+  &__title {
+    max-width: 17ch;
+
+    text-transform: uppercase;
+
+    color: #fff;
+
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+  }
+  &__img {
+    width: 30px;
   }
 }
