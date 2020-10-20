@@ -19,81 +19,69 @@
 
 @endphp
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('layouts.page')
 
-    <title>La Molisana</title>
+@section('title', 'La Molisana - Prodotti')
 
-    <!-- link stylesheet -->
-    <link rel="stylesheet" href="{{asset("css/app.css")}}">
+<!-- section 'mainContent' -->
+@section('mainContent')
 
-  </head>
-  <body>
+  <!-- main -->
+  <main class="main">
 
-    @include('partials.header')
+    @if (count($pasta_lunga) > 0)
+      <!-- pasta 1 -->
+      <section class="pasta">
+        <!-- ul - lunghe -->
+        <h2 class="pasta__main-title">Le Lunghe</h2>
+        <ul class="pasta__list">
+          @foreach ($pasta_lunga as $pasta)
+            <li class="pasta__card">
+              <img class="pasta__img" src="{{$pasta["src"]}}" alt="Foto Pasta - {{$pasta["titolo"]}}">
+            </li>
+          @endforeach
+        </ul>
+        <!-- /ul - lunghe -->
+      </section>
+      <!-- /pasta 1 -->
+    @endif
 
-    <!-- main -->
-    <main class="main">
+    @if (count($pasta_corta) > 0)
+      <!-- pasta 2 -->
+      <section class="pasta">
+        <!-- ul - corta -->
+        <h2 class="pasta__main-title">Le Corte</h2>
+        <ul class="pasta__list">
+          @foreach ($pasta_corta as $pasta)
+            <li class="pasta__card">
+              <img class="pasta__img" src="{{$pasta["src"]}}" alt="Foto Pasta - {{$pasta["titolo"]}}">
+            </li>
+          @endforeach
+        </ul>
+        <!-- /ul - corta -->
+      </section>
+      <!-- /pasta 2 -->
+    @endif
 
-      @if (count($pasta_lunga) > 0)
-        <!-- pasta 1 -->
-        <section class="pasta">
-          <!-- ul - lunghe -->
-          <h2 class="pasta__main-title">Le Lunghe</h2>
-          <ul class="pasta__list">
-            @foreach ($pasta_lunga as $pasta)
-              <li class="pasta__card">
-                <img class="pasta__img" src="{{$pasta["src"]}}" alt="Foto Pasta - {{$pasta["titolo"]}}">
-              </li>
-            @endforeach
-          </ul>
-          <!-- /ul - lunghe -->
-        </section>
-        <!-- /pasta 1 -->
-      @endif
+    @if (count($pasta_corta) > 0)
+      <!-- pasta 3 -->
+      <section class="pasta">
+        <!-- ul - cortissima -->
+        <h2 class="pasta__main-title">Le Cortissime</h2>
+        <ul class="pasta__list">
+          @foreach ($pasta_cortissima as $pasta)
+            <li class="pasta__card">
+              <img class="pasta__img" src="{{$pasta["src"]}}" alt="Foto Pasta - {{$pasta["titolo"]}}">
+            </li>
+          @endforeach
+        </ul>
+        <!-- /ul - cortissima -->
+      </section>
+      <!-- /pasta 3 -->
+    @endif
 
-      @if (count($pasta_corta) > 0)
-        <!-- pasta 2 -->
-        <section class="pasta">
-          <!-- ul - corta -->
-          <h2 class="pasta__main-title">Le Corte</h2>
-          <ul class="pasta__list">
-            @foreach ($pasta_corta as $pasta)
-              <li class="pasta__card">
-                <img class="pasta__img" src="{{$pasta["src"]}}" alt="Foto Pasta - {{$pasta["titolo"]}}">
-              </li>
-            @endforeach
-          </ul>
-          <!-- /ul - corta -->
-        </section>
-        <!-- /pasta 2 -->
-      @endif
+  </main>
+  <!-- /main -->
 
-      @if (count($pasta_corta) > 0)
-        <!-- pasta 3 -->
-        <section class="pasta">
-          <!-- ul - cortissima -->
-          <h2 class="pasta__main-title">Le Cortissime</h2>
-          <ul class="pasta__list">
-            @foreach ($pasta_cortissima as $pasta)
-              <li class="pasta__card">
-                <img class="pasta__img" src="{{$pasta["src"]}}" alt="Foto Pasta - {{$pasta["titolo"]}}">
-              </li>
-            @endforeach
-          </ul>
-          <!-- /ul - cortissima -->
-        </section>
-        <!-- /pasta 3 -->
-      @endif
-
-    </main>
-    <!-- /main -->
-
-    @include('partials.footer')
-
-  </body>
-</html>
+@endsection
+<!-- /section 'mainContent' -->
