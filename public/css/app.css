@@ -106,6 +106,10 @@
   background-color: rgba(0, 45, 115, 0.6);
 }
 
+.overlay__link {
+  text-decoration: none;
+}
+
 .overlay__title {
   max-width: 17ch;
   text-transform: uppercase;

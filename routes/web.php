@@ -22,7 +22,18 @@ Route::get('/', function () {
 })->name('homepage');
 
 Route::get('/products', function () {
-    return view('products');
+
+    $database = config('data_from_database');
+
+    $pasta_type = [];
+
+    foreach ($database as $key => $pasta) {
+      $pasta["id"] = $key;
+      $pasta_type[$pasta["tipo"]][] = $pasta;
+    }
+
+    return view('products', ["paste" => $pasta_type]);
+
 })->name('products');
 
 Route::get('/news', function () {

@@ -64,6 +64,9 @@
 
   opacity: 0;
   background-color: $bgBlueOpacity;
+  &__link {
+    text-decoration: none;
+  }
   &__title {
     max-width: 17ch;
 
