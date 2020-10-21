@@ -36,6 +36,42 @@ Route::get('/products', function () {
 
 })->name('products');
 
+Route::get('/products/show/{id}', function ($id) {
+
+    if (config('data_from_database.'.$id) == null) {
+      return redirect()->route('products');
+    }
+
+    $next_product = false;
+    $prev_product = false;
+
+    $idRef = $id;
+    if (config('data_from_database.'.++$idRef) != null) {
+      $next_product = $id;
+      ++$next_product;
+    }
+
+    $idRef = $id;
+
+    if (config('data_from_database.'.--$idRef) != null) {
+      $prev_product = $id;
+      --$prev_product;
+    }
+
+    $product_from_id = config('data_from_database.'.$id);
+
+    // dd(config("data_from_database.$id"));
+
+    $data = [
+      "product" => $product_from_id,
+      "prev" => $prev_product,
+      "next" => $next_product,
+    ];
+
+    return view('product_info', $data);
+
+})->name('product_info');
+
 Route::get('/news', function () {
     return view('news');
 })->name('news');

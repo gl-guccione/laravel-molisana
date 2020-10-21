@@ -1,8 +1,3 @@
-@php
-
-
-@endphp
-
 @extends('layouts.page')
 
 @section('title', 'La Molisana - Prodotti')
@@ -11,7 +6,7 @@
 @section('mainContent')
 
   <!-- main -->
-  <main class="main">
+  <main class="main_products">
 
     @if (count($paste) > 0)
 
