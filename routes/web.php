@@ -42,21 +42,11 @@ Route::get('/products/show/{id}', function ($id) {
       return redirect()->route('products');
     }
 
-    $next_product = false;
-    $prev_product = false;
-
-    $idRef = $id;
-    if (config('data_from_database.'.++$idRef) != null) {
-      $next_product = $id;
-      ++$next_product;
-    }
-
-    $idRef = $id;
-
-    if (config('data_from_database.'.--$idRef) != null) {
-      $prev_product = $id;
-      --$prev_product;
-    }
+    $next = $id + 1;
+    $next_product = (config('data_from_database.'.$next) != null) ? $next : false;
+    
+    $prev = $id - 1;
+    $prev_product = (config('data_from_database.'.$prev) != null) ? $prev : false;
 
     $product_from_id = config('data_from_database.'.$id);
 

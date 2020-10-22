@@ -18,6 +18,7 @@
     @if($prev !== false)
       <a href="/products/show/{{$prev}}">prev</a>
     @endif
+
     @if($next !== false)
       <a href="/products/show/{{$next}}">next</a>
     @endif
