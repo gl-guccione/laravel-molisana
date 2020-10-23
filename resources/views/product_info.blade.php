@@ -2,7 +2,6 @@
 //  var_dump($product);
 //  var_dump($prev);
 //  var_dump($next);
-//  die;
 @endphp
 
 @extends('layouts.page')

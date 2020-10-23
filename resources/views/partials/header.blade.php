@@ -8,9 +8,9 @@
   <!-- nav -->
   <nav class="header__nav">
     <ul class="header__ul">
-      <li><a class="header__link" href="{{route('homepage')}}">Home</a></li>
-      <li class="active"><a class="header__link " href="{{route('products')}}">Prodotti</a></li>
-      <li><a class="header__link" href="{{route('news')}}">News</a></li>
+      <li class="@if(url()->current() == route('homepage')) active @endif"><a class="header__link" href="{{route('homepage')}}">Home</a></li>
+      <li class="@if(url()->current() == route('products')) active @endif"><a class="header__link" href="{{route('products')}}">Prodotti</a></li>
+      <li class="@if(url()->current() == route('news')) active @endif"><a class="header__link" href="{{route('news')}}">News</a></li>
     </ul>
   </nav>
   <!-- /nav -->

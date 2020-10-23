@@ -18,7 +18,7 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/', function () {
-    return view('homepage');
+    return redirect()->route('products');
 })->name('homepage');
 
 Route::get('/products', function () {
