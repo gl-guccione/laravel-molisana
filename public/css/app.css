@@ -6292,6 +6292,10 @@ readers do not read off random characters that represent icons */
   line-height: 28px;
 }
 
+.product__description ol {
+  margin: 15px 30px;
+}
+
 .buttons {
   position: absolute;
   top: 50%;

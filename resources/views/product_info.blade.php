@@ -20,7 +20,7 @@
     <h1 class="product__title">{{$product["titolo"]}}</h1>
     <img class="fullsize_img" src="{{$product["src-h"]}}" alt="Foto - {{$product["titolo"]}}">
     <img class="fullsize_img" src="{{$product["src-p"]}}" alt="Foto - {{$product["titolo"]}}">
-    <p class="product__description">{!!$product["descrizione"]!!}</p>
+    <div class="product__description">{!!$product["descrizione"]!!}</p>
 
 
 
