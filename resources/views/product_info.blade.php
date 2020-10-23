@@ -14,21 +14,27 @@
 @section('mainContent')
 
   <!-- main -->
-  <main>
-    @if($prev !== false)
-      <a href="/products/show/{{$prev}}">prev</a>
-    @endif
+  <main class="main_product">
 
-    @if($next !== false)
-      <a href="/products/show/{{$next}}">next</a>
-    @endif
 
-    <h1>{{$product["titolo"]}}</h1>
-    <img src="{{$product["src-h"]}}" alt="Foto - {{$product["titolo"]}}">
-    <img src="{{$product["src-p"]}}" alt="Foto - {{$product["titolo"]}}">
-    <img src="{{$product["src-h"]}}" alt="Foto - {{$product["titolo"]}}">
-    <p>{!!$product["descrizione"]!!}</p>
+    <h1 class="product__title">{{$product["titolo"]}}</h1>
+    <img class="fullsize_img" src="{{$product["src-h"]}}" alt="Foto - {{$product["titolo"]}}">
+    <img class="fullsize_img" src="{{$product["src-p"]}}" alt="Foto - {{$product["titolo"]}}">
+    <p class="product__description">{!!$product["descrizione"]!!}</p>
 
+
+
+    <div class="buttons">
+
+      @if($prev !== false)
+        <a class="left" href="/products/show/{{$prev}}"><i class="fas fa-angle-left"></i></a>
+      @endif
+
+      @if($next !== false)
+        <a class="right" href="/products/show/{{$next}}"><i class="fas fa-angle-right"></i></a>
+      @endif
+
+    </div>
   </main>
   <!-- /main -->
 
